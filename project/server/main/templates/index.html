@@ -13,8 +13,9 @@
 </head>
 <body>
 <div class="jumbotron text-center">
-    <h1>Flask RQ Demo</h1>
-    <p>This is a demo project that ties Flask, Redis, RQ (Redis Queue) and Docker together and can serve as template for other projects. <br/>It's an introduction on how to use Flask with RQ and also on how to use docker-compose in a Python project.</p>
+    <img src="https://sahanalytics.com/wp-content/uploads/2022/05/cropped-7.png" height="100" width="100" alt="">
+    <h1>SAH Distributed Worker</h1>
+    <p>Executer facilement vos Job sur de manière distribué sur des clusters SahCloud</p>
     <p>This page auto reloads itself.</p>
 </div>
 <div class="container mt-5">
@@ -22,11 +23,11 @@
         <div class="col-md-6 offset-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Create Job</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Create a long running job and enqueue it for a worker to pick it up.</h6>
-                    <p class="card-text">This job waits for 15 seconds and returns 15.</p>
+                    <h5 class="card-title">Creer un job</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Créez un job de longue durée et mettez-le en file d'attente pour qu'un worker puisse le récupérer.</h6>
+                    <p class="card-text">Ce Job attend 15 secondes.</p>
                     <form action="add_wait_job" method="get">
-                        <td><a href="/add_wait_job/15" class="btn btn-sm btn-primary">Enqueue wait job</a></td>
+                        <td><a href="/add_wait_job/15" class="btn btn-sm btn-primary">Mettre le Job en file d'attente</a></td>
                     </form>
                 </div>
             </div>
@@ -35,7 +36,7 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <h3>Job list</h3>
-            <p>Finished and failed jobs will linger around until their result_ttl or failure_ttl has expired and they will be deleted.</p>
+            <p>Les tâches terminées et échouées persisteront jusqu'à ce que leur result_ttl ou Failure_ttl ait expiré et elles seront supprimées.</p>
             <table class="table">
                 <thead><tr>
                     <th>State</th>
