@@ -27,3 +27,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  k6-test:
+    name: Exécuter des tests de charge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Téléchargement du code
+        uses: actions/checkout@v4
+      - name: Exécution test k6 
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: my-load-test.js
+          flags: --vus 50 --duration 10s
+          cloud: true
+          token: ${{ secrets.K6_CLOUD_API_TOKEN }}
